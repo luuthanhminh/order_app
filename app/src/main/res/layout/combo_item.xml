@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="#ffffff"
+    android:layout_margin="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="335dp"
+    android:layout_height="330dp"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/imgcombo">
+
+        <TextView
+            android:id="@+id/tvSale"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom|left"
+            android:background="#4a4a4a"
+            android:gravity="center"
+            android:text="Saving 20%"
+            android:textColor="#ffffff"
+            android:textSize="12dp" />
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvComboName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="20dp"
+        android:text="Applebee’s 2 combo w. salad"
+        android:textColor="#000000"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/tvComboCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="20dp"
+        android:text="S$1800.00"
+        android:textColor="#a80014"
+        android:textSize="20dp" />
+
+    <LinearLayout
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:id="@+id/tvCbFood1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01 Summer Spring Roll"
+            android:textColor="#4a4a4a"
+            android:textSize="12dp" />
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginLeft="21dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/img_icon_logo" />
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvCbNameRes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="The Girlls Sai Gon"
+                android:textColor="#000000"
+                android:textSize="14dp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tvCbDetailRes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Barbecure &amp; bar"
+                android:textColor="#000000"
+                android:textSize="12dp">
+
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

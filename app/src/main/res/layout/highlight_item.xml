@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff"
+    android:layout_width="335dp"
+    android:layout_height="150dp"
+    android:layout_marginBottom="5dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="130dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/img_food1" />
+
+    <LinearLayout
+        android:layout_width="180dp"
+        android:layout_height="140dp"
+        android:orientation="vertical">
+
+        <TextView
+
+            android:id="@+id/tvNameFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text="Salmon Pasta with a Creamy Garlic Sauce"
+            android:textColor="#000000"
+            android:textSize="14dp" />
+
+        <TextView
+
+            android:id="@+id/tvCostFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:text="S$1800.00"
+            android:textColor="#A80014"
+            android:textSize="18dp" />
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/img_icon_logo" />
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvNameRestaurant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="The Girlls Sai Gon"
+                    android:textColor="#000000"
+                    android:textSize="14dp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/tvDetailRestaurant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Barbecure &amp; bar"
+                    android:textColor="#000000"
+                    android:textSize="12dp">
+
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <Button
+        android:textSize="16dp"
+        android:text="+"
+        android:textColor="#ffffff"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:padding="0dp"
+        android:layout_marginTop="43dp"
+        android:background="#A80014" />
+</LinearLayout>

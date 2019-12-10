@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_margin="10dp"
+    android:background="#ffffff"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="250dp"
+    android:layout_height="300dp">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:src="@drawable/img_food"/>
+
+    <TextView
+        android:id="@+id/txtNameFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fishy Lunch Box"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="17dp"
+        android:textColor="#000000"
+        />
+
+    <TextView
+        android:id="@+id/txtDetailFood"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis finibus risus. Donec felis dolor, vulputate at hendrerit nec, ultrices id nibh. Nullam nec metus in mi sollicitudin tempor consequat non sem. "
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="17dp"
+        android:textColor="#000000"
+        />
+    <LinearLayout
+
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginBottom="17dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/img_icon_logo"/>
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtNameRestaurant"
+                android:layout_marginLeft="10dp"
+                android:textColor="#000000"
+                android:text="The Girlls Sai Gon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <TextView
+                android:id="@+id/txtDetailRestaurant"
+                android:layout_marginLeft="10dp"
+                android:textColor="#000000"
+                android:text="Barbecure &amp; bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

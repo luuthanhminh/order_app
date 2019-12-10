@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginLeft="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/imgResCategories"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/img_icon_logo"
+        />
+    <TextView
+        android:id="@+id/tvResNameCategories"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bakery"
+        />
+</LinearLayout>

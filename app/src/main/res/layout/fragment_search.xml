@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.SearchFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="91dp"
+                    android:background="#860010"
+                    android:scaleType="fitXY" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:scaleType="fitXY"
+                    android:background="#eaeaea"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="62dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/edditext_style"
+                    android:drawableLeft="@drawable/ic_magnifying_glass"
+                    android:drawablePadding="12dp"
+                    android:hint="Search food &amp; restaurant"
+                    android:paddingLeft="18dp" />
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="26dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Recent Search"
+                    android:textColor="#4a4a4a" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_recent"
+                    android:layout_width="335dp"
+                    android:layout_height="327dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+        </FrameLayout>
+
+
+    </ScrollView>
+
+
+</FrameLayout>
