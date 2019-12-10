@@ -5,10 +5,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodbooking.R
 import com.example.foodbooking.data.Categories_food
+import com.squareup.picasso.Picasso
 
 
 class CategoriesAdapter(val categories:List<Categories_food>, val context: Context?): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
@@ -31,10 +33,11 @@ class CategoriesAdapter(val categories:List<Categories_food>, val context: Conte
 class CategoriesViewHolder( val view: View) : RecyclerView.ViewHolder(view) {
 
     val tvCategoriesName = view.findViewById<TextView>(R.id.tvResNameCategories)
+    val imageview = view.findViewById<ImageView>(R.id.imgResCategories)
 
 
     fun bindData(categories : Categories_food){
         tvCategoriesName.text = categories.CategoriesName
-
+        Picasso.get().load("https://images.foody.vn/res/g93/920647/prof/s640x400/foody-upload-api-foody-mobile-lklk-190522154211.jpg").into(imageview)
     }
 }

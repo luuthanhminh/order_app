@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodbooking.R
 import com.example.foodbooking.data.Oder
+import com.squareup.picasso.Picasso
 
 
 class OderAdapter(val oder:List<Oder>, val context: Context?) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
@@ -36,6 +37,5 @@ class OderViewHolder(val view : View) : RecyclerView.ViewHolder(view){
     fun binData(oder:Oder){
         tvOderName.text = oder.OderName
         tvOderTime.text = oder.Time
-
     }
 }
