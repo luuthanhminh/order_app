@@ -7,10 +7,13 @@
     android:orientation="horizontal">
 
     <ImageView
+        android:id="@+id/imgHighlight"
         android:layout_width="100dp"
         android:layout_height="130dp"
         android:layout_margin="10dp"
-        android:src="@drawable/img_food1" />
+        android:src="@drawable/img_food1"
+        android:scaleType="fitXY"
+        />
 
     <LinearLayout
         android:layout_width="180dp"
@@ -18,8 +21,8 @@
         android:orientation="vertical">
 
         <TextView
-
-            android:id="@+id/tvNameFood"
+            android:textStyle="bold"
+            android:id="@+id/tvNameHighLightFood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="13dp"
@@ -28,8 +31,8 @@
             android:textSize="14dp" />
 
         <TextView
-
-            android:id="@+id/tvCostFood"
+            android:textStyle="bold"
+            android:id="@+id/tvPriceHighLightFood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="19dp"
@@ -44,7 +47,9 @@
             android:layout_marginTop="15dp"
             android:orientation="horizontal">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_marginTop="3dp"
+                android:id="@+id/imgLogoHighLight"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/img_icon_logo" />
@@ -56,7 +61,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tvNameRestaurant"
+                    android:id="@+id/tvNameHighLightRestaurant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -67,12 +72,12 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/tvDetailRestaurant"
+                    android:id="@+id/tvDetailHighLightRestaurant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="Barbecure &amp; bar"
-                    android:textColor="#000000"
+                    android:textColor="#4a4a4a"
                     android:textSize="12dp">
 
                 </TextView>
@@ -82,11 +87,12 @@
 
     </LinearLayout>
     <Button
+        android:id="@+id/btAdddHighLight"
         android:textSize="16dp"
         android:text="+"
         android:textColor="#ffffff"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:padding="0dp"
         android:layout_marginTop="43dp"
         android:background="#A80014" />

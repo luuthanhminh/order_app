@@ -130,7 +130,8 @@
         android:layout_height="80dp"
         android:layout_gravity="bottom"
         android:background="#fafafa"
-        app:itemIconTint="@color/colorAccent"
+        app:itemIconTint="@drawable/selector_bottombar_text"
+        app:itemTextColor="@drawable/selector_bottombar_text"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_bar_menu" />
 </LinearLayout>

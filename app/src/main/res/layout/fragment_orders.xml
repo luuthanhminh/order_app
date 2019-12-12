@@ -22,15 +22,15 @@
            >
            <com.google.android.material.bottomnavigation.BottomNavigationView
                android:id="@+id/tablayout"
-
                android:layout_width="match_parent"
                android:layout_height="match_parent"
                android:layout_gravity="center"
                android:background="#860010"
                android:paddingBottom="13dp"
-               app:itemTextColor="#ffffff"
+               app:itemTextColor="@drawable/selector_item_textoders"
                app:labelVisibilityMode="labeled"
-               app:menu="@menu/menu_orders" />
+               app:menu="@menu/menu_orders"
+               />
        </LinearLayout>
 
    </LinearLayout>

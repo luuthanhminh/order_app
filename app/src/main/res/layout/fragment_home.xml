@@ -14,26 +14,39 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-                <LinearLayout
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-
+                    android:layout_height="wrap_content">
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/img_title" />
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <ImageView
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="343dp"
-                        android:background="#A80014" />
-                </LinearLayout>
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_title" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="343dp"
+                            android:background="#A80014" />
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:indeterminateTintMode="screen"
+                        android:id="@+id/pbLoadingHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:indeterminate="false" />
+                </FrameLayout>
+
 
                 <LinearLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -47,6 +60,7 @@
                         android:src="@drawable/logo_app" />
 
                     <EditText
+                        android:focusable="false"
                         android:layout_width="355dp"
                         android:layout_height="55dp"
                         android:layout_gravity="center"
@@ -100,7 +114,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyclerview_categories"
                         android:layout_width="wrap_content"
-                        android:layout_height="83dp"
+                        android:layout_height="103dp"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="15dp"
                         android:orientation="horizontal"></androidx.recyclerview.widget.RecyclerView>
@@ -109,7 +123,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginTop="48dp"
+                        android:layout_marginTop="30dp"
                         android:text="TODAY’S HIGHLIGHTS"
                         android:textColor="#000000"
                         android:textSize="16dp"
@@ -134,37 +148,10 @@
                         android:layout_marginRight="20dp"
                         android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
 
-                    <TextView
 
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="30dp"
-                        android:text="COMBO &amp; SET ORDERS"
-                        android:textColor="#000000"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="5dp"
-                        android:text="Eat more and still saving money. Order our best combo!"
-                        android:textColor="#000000"
-                        android:textSize="12dp" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerview_combo"
-                        android:layout_width="335dp"
-                        android:layout_height="327dp"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginRight="20dp"
-                        android:orientation="vertical"></androidx.recyclerview.widget.RecyclerView>
                 </LinearLayout>
+
             </FrameLayout>
+
     </ScrollView>
 </FrameLayout>

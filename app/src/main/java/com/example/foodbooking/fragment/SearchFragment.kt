@@ -23,16 +23,16 @@ class SearchFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_search, container, false)
-        val rvHighlight = view.findViewById<RecyclerView>(R.id.recyclerview_recent)
-        val highlight = ArrayList<HighLight_food>()
-
-        highlight.add(HighLight_food("Salmon Pasta with a Creamy Garlic Sauce","S\$1800.00","The Girlls Sai Gon","Barbecure & bar"))
-        highlight.add(HighLight_food("Salmon Pasta with a Creamy Garlic Sauce","S\$1800.00","Jalapeno Restaurant","Mexico Cuisine"))
-        highlight.add(HighLight_food("Salmon Pasta with a Creamy Garlic Sauce","S\$1800.00","The Girlls Sai Gon","Barbecure & bar"))
-        highlight.add(HighLight_food("Salmon Pasta with a Creamy Garlic Sauce","S\$1800.00","Jalapeno Restaurant","Mexico Cuisine"))
-
-        rvHighlight.layoutManager = LinearLayoutManager(this.activity)
-        rvHighlight.adapter = HighlightAdapter(highlight,this.activity)
+//        val rvHighlight = view.findViewById<RecyclerView>(R.id.recyclerview_recent)
+//        val highlight = ArrayList<HighLight_food>()
+//
+//        highlight.add(HighLight_food("Salmon Pasta with a Creamy Garlic Sauce","S\$1800.00","The Girlls Sai Gon","Barbecure & bar"))
+//        highlight.add(HighLight_food("Salmon Pasta with a Creamy Garlic Sauce","S\$1800.00","Jalapeno Restaurant","Mexico Cuisine"))
+//        highlight.add(HighLight_food("Salmon Pasta with a Creamy Garlic Sauce","S\$1800.00","The Girlls Sai Gon","Barbecure & bar"))
+//        highlight.add(HighLight_food("Salmon Pasta with a Creamy Garlic Sauce","S\$1800.00","Jalapeno Restaurant","Mexico Cuisine"))
+//
+//        rvHighlight.layoutManager = LinearLayoutManager(this.activity)
+//        rvHighlight.adapter = HighlightAdapter(highlight,this.activity)
         return view
     }
 

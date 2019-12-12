@@ -38,6 +38,6 @@ class CategoriesViewHolder( val view: View) : RecyclerView.ViewHolder(view) {
 
     fun bindData(categories : Categories_food){
         tvCategoriesName.text = categories.CategoriesName
-        Picasso.get().load("https://images.foody.vn/res/g93/920647/prof/s640x400/foody-upload-api-foody-mobile-lklk-190522154211.jpg").into(imageview)
+        Picasso.get().load(categories.ImgCategories).into(imageview)
     }
 }

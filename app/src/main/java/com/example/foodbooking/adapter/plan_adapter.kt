@@ -4,10 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodbooking.R
 import com.example.foodbooking.data.Plan_food
+import com.squareup.picasso.Picasso
 
 
 class PlanAdapter(val food:List<Plan_food>, val context: Context?): RecyclerView.Adapter<RecyclerView.ViewHolder>(){
@@ -31,16 +33,18 @@ class PlanAdapter(val food:List<Plan_food>, val context: Context?): RecyclerView
 
 }
 class PlanViewHolder( val view: View) : RecyclerView.ViewHolder(view){
-
-    val tvNameFood = view.findViewById<TextView>(R.id.txtNameFood)
-    val tvDetailFood = view.findViewById<TextView>(R.id.txtDetailFood)
-    val tvNameRes = view.findViewById<TextView>(R.id.txtNameRestaurant)
-    val tvDetailRes = view.findViewById<TextView>(R.id.txtDetailRestaurant)
+    val imgPlanFood = view.findViewById<ImageView>(R.id.imgPlan)
+    val tvNameFood = view.findViewById<TextView>(R.id.tvNamePlanFood)
+    val tvDetailFood = view.findViewById<TextView>(R.id.tvDetailPlanFood)
+    val tvCuisines = view.findViewById<TextView>(R.id.tvCuisinesPlan)
+    val tvAddRess = view.findViewById<TextView>(R.id.tvAddressPlan)
 
     fun bindData(foods : Plan_food){
-        tvNameFood.text = foods.NameFood
-        tvDetailFood.text = foods.DetailFood
-        tvNameRes.text = foods.NameRestaurant
-        tvDetailRes.text= foods.DetailRestaurant
+        tvNameFood.text = foods.NamePlanFood
+        tvDetailFood.text = foods.DetailPlanFood
+        tvCuisines.text= foods.CuisicesPlan
+        tvAddRess.text = foods.AddressPlan
+        Picasso.get().load(foods.ImagePlanFood).into(imgPlanFood)
+
     }
 }
