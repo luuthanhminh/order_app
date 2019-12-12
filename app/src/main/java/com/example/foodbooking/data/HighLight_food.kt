@@ -2,18 +2,20 @@ package com.example.foodbooking.data
 
 
 class HighLight_food{
-    lateinit var ImageHighlightFood :String
-    lateinit var NameHighlightFood :String
-    lateinit var CostFood :String
+     var ImageHighlightFood :String
+     var NameHighlightFood :String
+     var PriceFood :String
 
-    lateinit var LogoHighlightRestaurant :String
-    lateinit var NameHighlightRestaurant :String
-    lateinit var DetailHighlightRestaurant :String
+     var LogoHighlightRestaurant :String
+     var NameHighlightRestaurant :String
+     var DetailHighlightRestaurant :String
 
-    constructor(nameFood :String, costFood :String, nameRestaurant:String, detailRestaurant:String){
+    constructor(imgHighLightFood :String,nameFood :String, priceFood :String, logoHighLight:String, nameRestaurant:String, detailRestaurant:String){
         this.NameHighlightFood = nameFood
-        this.CostFood = costFood
+        this.PriceFood = priceFood
         this.NameHighlightRestaurant = nameRestaurant
         this.DetailHighlightRestaurant = detailRestaurant
+        this.ImageHighlightFood = imgHighLightFood
+        this.LogoHighlightRestaurant = logoHighLight
     }
 }

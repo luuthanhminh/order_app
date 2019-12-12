@@ -4,10 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodbooking.R
 import com.example.foodbooking.data.HighLight_food
+import com.squareup.picasso.Picasso
 
 class HighlightAdapter(val highlight:List<HighLight_food>, val context: Context?): RecyclerView.Adapter<RecyclerView.ViewHolder>()
 {
@@ -26,16 +28,19 @@ class HighlightAdapter(val highlight:List<HighLight_food>, val context: Context?
     }
 }
 class HighlightViewHolder( val view: View) : RecyclerView.ViewHolder(view) {
-
-    val tvNameFood = view.findViewById<TextView>(R.id.tvNameRestaurant)
-    val tvCostFood = view.findViewById<TextView>(R.id.tvCostFood)
-    val tvNameRes = view.findViewById<TextView>(R.id.tvNameRestaurant)
-    val tvDetailRes = view.findViewById<TextView>(R.id.tvDetailRestaurant)
+    val imgFood = view.findViewById<ImageView>(R.id.imgHighlight)
+    val tvNameFood = view.findViewById<TextView>(R.id.tvNameHighLightRestaurant)
+    val tvPriceFood = view.findViewById<TextView>(R.id.tvPriceHighLightFood)
+    val tvNameRes = view.findViewById<TextView>(R.id.tvNameHighLightRestaurant)
+    val tvDetailRes = view.findViewById<TextView>(R.id.tvDetailHighLightRestaurant)
+    val logoRes = view.findViewById<ImageView>(R.id.imgLogoHighLight)
 
     fun bindData(highlights : HighLight_food){
         tvNameFood.text = highlights.NameHighlightFood
-        tvCostFood.text = highlights.CostFood
+        tvPriceFood.text = highlights.PriceFood
         tvNameRes.text = highlights.NameHighlightRestaurant
         tvDetailRes.text= highlights.DetailHighlightRestaurant
+        Picasso.get().load(highlights.ImageHighlightFood).into(imgFood)
+        Picasso.get().load(highlights.LogoHighlightRestaurant).into(logoRes)
     }
 }

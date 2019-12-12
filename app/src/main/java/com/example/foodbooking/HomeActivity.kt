@@ -27,26 +27,26 @@ class HomeActivity : AppCompatActivity() {
         bottom_navigation.setOnNavigationItemSelectedListener { item: MenuItem ->
             if (item.itemId == R.id.mnHome) {
 
-                linearCheckOut.visibility = View.GONE
-                linearHome.visibility = View.VISIBLE
+//                linearCheckOut.visibility = View.GONE
+//                linearHome.visibility = View.VISIBLE
                 viewpager.setCurrentItem(0)
             } else if (item.itemId == R.id.mnSearch) {
-                linearCheckOut.visibility = View.GONE
-                linearHome.visibility = View.VISIBLE
+//                linearCheckOut.visibility = View.GONE
+//                linearHome.visibility = View.VISIBLE
                 viewpager.setCurrentItem(1)
 
             } else if (item.itemId == R.id.mnOrders) {
-                linearCheckOut.visibility = View.VISIBLE
-                linearHome.visibility = View.GONE
+//                linearCheckOut.visibility = View.VISIBLE
+//                linearHome.visibility = View.GONE
                 viewpager.setCurrentItem(2)
 
             } else if (item.itemId == R.id.mnNotification) {
-                linearCheckOut.visibility = View.GONE
-                linearHome.visibility = View.GONE
+//                linearCheckOut.visibility = View.GONE
+//                linearHome.visibility = View.GONE
                 viewpager.setCurrentItem(3)
             } else if (item.itemId == R.id.mnProfile) {
-                linearCheckOut.visibility = View.GONE
-                linearHome.visibility = View.GONE
+//                linearCheckOut.visibility = View.GONE
+//                linearHome.visibility = View.GONE
                 viewpager.setCurrentItem(4)
             }
             return@setOnNavigationItemSelectedListener true
