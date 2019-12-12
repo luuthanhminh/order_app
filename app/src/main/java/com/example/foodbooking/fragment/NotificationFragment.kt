@@ -10,8 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.foodbooking.R
-import com.example.myappfood.fragments.NewEventFragment
-import com.example.myappfood.fragments.OderFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 /**

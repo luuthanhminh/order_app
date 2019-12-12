@@ -1,6 +1,8 @@
 package com.example.foodbooking.apis
 
 import com.example.foodbooking.AppConstants
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -15,6 +17,10 @@ class ApiService {
                 .build()
                 .create(ApiRequestInterface::class.java);
             return retrofit
+        }
+
+        fun createGson() : Gson {
+            return GsonBuilder().setPrettyPrinting().create();
         }
     }
 }

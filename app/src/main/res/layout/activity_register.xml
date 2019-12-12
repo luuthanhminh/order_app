@@ -59,6 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+
                 <TextView
                     android:textSize="12dp"
                     android:layout_marginTop="27dp"
@@ -67,6 +68,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <EditText
+                    android:id="@+id/edFirstname"
                     android:layout_marginTop="6dp"
                     android:background="#F6F6F6"
                     android:layout_width="match_parent"
@@ -80,6 +82,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <EditText
+                    android:id="@+id/edLastname"
                     android:layout_marginTop="6dp"
                     android:background="#F6F6F6"
                     android:layout_width="match_parent"
@@ -93,6 +96,8 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <EditText
+                    android:inputType="textEmailAddress"
+                    android:id="@+id/edemailRegister"
                     android:layout_marginTop="6dp"
                     android:background="#F6F6F6"
                     android:layout_width="match_parent"
@@ -106,6 +111,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <EditText
+                    android:id="@+id/edpasswordRegister"
                     android:inputType="textPassword"
                     android:layout_marginTop="6dp"
                     android:background="#F6F6F6"
@@ -127,12 +133,24 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <EditText
+                    android:inputType="textPassword"
+                    android:id="@+id/edConfirmPass"
                     android:layout_marginTop="6dp"
                     android:background="#F6F6F6"
                     android:layout_width="match_parent"
                     android:layout_height="40dp">
                 </EditText>
+                <ProgressBar
+
+                    android:visibility="gone"
+                    android:id="@+id/pbLoading1"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </ProgressBar>
                 <Button
+                    android:id="@+id/btnRegister"
                     android:background="@drawable/bg_register_button"
                     android:textColor="#FFFFFF"
                     android:text="REGISTER"
@@ -149,6 +167,7 @@
                     android:layout_height="wrap_content">
 
                 </TextView>
+
                 <Button
                     android:background="@android:color/transparent"
                     android:text="@string/login"
@@ -159,7 +178,10 @@
                     android:layout_height="wrap_content">
                 </Button>
 
+
+
             </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>

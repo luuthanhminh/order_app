@@ -13,7 +13,7 @@
             android:layout_height="match_parent"
             android:background="#FFF2F3">
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imgNewevent"
                 android:layout_marginLeft="25dp"
                 android:layout_marginBottom="18dp"
@@ -21,7 +21,7 @@
                 android:src="@drawable/icon_lich"
                 android:layout_width="36dp"
                 android:layout_height="36dp">
-            </ImageView>
+            </de.hdodenhof.circleimageview.CircleImageView>
 
             <TextView
                 android:textStyle="bold"

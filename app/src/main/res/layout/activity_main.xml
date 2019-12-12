@@ -74,6 +74,7 @@
             android:layout_height="wrap_content">
         </TextView>
         <EditText
+            android:inputType="textPassword"
             android:id="@+id/edPassword"
             android:hint="Password"
             android:layout_marginTop="6dp"
@@ -114,7 +115,7 @@
             android:layout_height="wrap_content">
         </TextView>
         <Button
-            android:id="@+id/btnRegister"
+            android:id="@+id/btnRegisterLogin"
             android:textColor="#A80014"
             android:layout_marginTop="3dp"
             android:layout_gravity="center"

@@ -2,8 +2,10 @@ package com.example.foodbooking.apis
 
 
 import com.example.foodbooking.apis.requestModels.LoginRequest
+import com.example.foodbooking.apis.requestModels.RegisterRequest
 import com.example.foodbooking.apis.responseModels.GetCurrentUserResponse
 import com.example.foodbooking.apis.responseModels.LoginResponse
+import com.example.foodbooking.apis.responseModels.RegisterResponse
 import io.reactivex.Observable
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -17,5 +19,9 @@ interface ApiRequestInterface {
 
     @GET("user/{userId}")
     fun getCurrentUser(@Path("userId") userId: String, @Header("Authorization") token: String) : Observable<GetCurrentUserResponse>
+
+    @POST("user/register")
+    fun Register(@Body register : RegisterRequest) : Observable<RegisterResponse>
+
 }
 
