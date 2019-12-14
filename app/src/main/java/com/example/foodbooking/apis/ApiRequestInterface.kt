@@ -3,10 +3,7 @@ package com.example.foodbooking.apis
 
 import com.example.foodbooking.apis.requestModels.LoginRequest
 import com.example.foodbooking.apis.requestModels.RegisterRequest
-import com.example.foodbooking.apis.responseModels.GetCurrentUserResponse
-import com.example.foodbooking.apis.responseModels.GetDasboardResponse
-import com.example.foodbooking.apis.responseModels.LoginResponse
-import com.example.foodbooking.apis.responseModels.RegisterResponse
+import com.example.foodbooking.apis.responseModels.*
 import io.reactivex.Observable
 import retrofit2.http.*
 
@@ -25,6 +22,15 @@ interface ApiRequestInterface {
 
     @GET("home/dashboard")
     fun getDashBoard(@Header("Authorization") token: String): Observable<GetDasboardResponse>
+
+    @GET("/api/home/categories/{categoryId}")
+    fun getCategories(@Path("categoryId") categoryId:String,  @Header("Authorization") token: String):Observable<GetCategories>
+
+    @GET(   "/api/home/search")
+    fun getDataSearch(@Query ("keyword")keyword:String,@Header("Authorization") token :String): Observable<GetDataSearch>
+
+    @GET("/api/home/menu/{deliveryId}")
+    fun getDeliveryId(@Path("deliveryId") deliveryId:String,@Header("Authorization") token :String): Observable<GetDelivery>
 
 }
 

@@ -71,9 +71,6 @@ class HomeActivity : AppCompatActivity() {
 
         })
 
-        linearCost.setOnClickListener {
-            viewpager.setCurrentItem(5)
-        }
 
 
     }
@@ -92,9 +89,7 @@ class CollectionAdapter(fragmentActivity: FragmentActivity) :
             return OrdersFragment()
         } else if (position == 3) {
             return NotificationFragment()
-        } else if (position == 4) {
-            return ProfileFragment()
-        } else return CategoryFragment()
+        } else  return ProfileFragment()
     }
 
 

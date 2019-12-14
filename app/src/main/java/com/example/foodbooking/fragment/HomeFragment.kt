@@ -47,7 +47,6 @@ class HomeFragment : Fragment() {
             .observeOn(AndroidSchedulers.mainThread())
             .doOnComplete { hideloading() }
             .subscribe(this::handleDashBoardResponse, this::handleError)
-
         return view
     }
 

@@ -6,7 +6,10 @@
     android:layout_height="match_parent"
     android:background="#eaeaea"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,9 +17,7 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -35,15 +36,6 @@
 
                     </LinearLayout>
 
-                    <ProgressBar
-                        android:indeterminateTintMode="screen"
-                        android:id="@+id/pbLoadingHome"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:indeterminate="false" />
-                </FrameLayout>
-
 
                 <LinearLayout
 
@@ -60,7 +52,6 @@
                         android:src="@drawable/logo_app" />
 
                     <EditText
-                        android:focusable="false"
                         android:layout_width="355dp"
                         android:layout_height="55dp"
                         android:layout_gravity="center"
@@ -95,7 +86,7 @@
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/recyclerview_plant"
                         android:layout_width="wrap_content"
-                        android:layout_height="300dp"
+                        android:layout_height="340dp"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="14dp"
                         android:background="?attr/selectableItemBackground"
@@ -151,6 +142,15 @@
 
                 </LinearLayout>
 
+                <ProgressBar
+
+                    android:id="@+id/pbLoadingHome"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="300dp"
+                    android:indeterminateTintMode="screen"
+                    />
             </FrameLayout>
 
     </ScrollView>
