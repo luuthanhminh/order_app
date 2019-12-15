@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodbooking.R
 import com.example.foodbooking.data.Combo_food
+import com.example.foodbooking.fragment.DeliveryFragment
 import com.squareup.picasso.Picasso
 
 
@@ -67,7 +69,10 @@ class ComboViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
             discount3.text = cb.Promotions[2].distcount
         }
 
-
+        view.setOnClickListener {
+            (it.context as AppCompatActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.flHome,  DeliveryFragment.create(cb.deliveryId.toString(),cb.ImagePro,cb.NamePro)).addToBackStack(null).commit()
+        }
 
 
     }

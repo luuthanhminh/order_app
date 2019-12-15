@@ -92,7 +92,7 @@ class CategoryFragment : Fragment() {
                 Combo_food(
                     itemPro.image,
                     itemPro.name,
-                    itemPro.priceRange, distcount, itemPro.address, itemPro.cuisines
+                    itemPro.priceRange, distcount, itemPro.address, itemPro.cuisines,itemPro.deliveryId
                 )
             )
 

@@ -7,8 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodbooking.AppConstants
 
@@ -20,6 +23,7 @@ import com.example.foodbooking.apis.responseModels.GetCategories
 import com.example.foodbooking.apis.responseModels.GetDelivery
 import com.example.foodbooking.data.Delivery
 import com.google.gson.GsonBuilder
+import com.squareup.picasso.Picasso
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_delivery.*
@@ -30,9 +34,11 @@ import retrofit2.HttpException
  */
 class DeliveryFragment : Fragment() {
     companion object {
-        fun create(deliveryId: String): DeliveryFragment {
+        fun create(deliveryId: String, img :String,title:String): DeliveryFragment {
             val fragment = DeliveryFragment()
             fragment.deliveryId = deliveryId
+            fragment.img = img
+            fragment.deliveryTitle = title
             return fragment
         }
     }
@@ -41,6 +47,8 @@ class DeliveryFragment : Fragment() {
         ApiService.create()
     }
     lateinit var deliveryId: String
+    lateinit var img :String
+    lateinit var deliveryTitle:String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,6 +56,12 @@ class DeliveryFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_delivery, container, false)
         val token = SettingService.Get(AppConstants.TOKENKEY, this.activity as Activity)
+        val imgDeli = view.findViewById<ImageView>(R.id.imgDeliveryId)
+        val deliTitle = view.findViewById<TextView>(R.id.tvtitleDeliveryId)
+        val back = view.findViewById<ImageView>(R.id.imgBack)
+        back.setOnClickListener { (it.context as AppCompatActivity).supportFragmentManager.popBackStack() }
+        Picasso.get().load(img).into(imgDeli)
+        deliTitle.text = deliveryTitle
         apiService.getDeliveryId(deliveryId, "Bearer ${token}")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

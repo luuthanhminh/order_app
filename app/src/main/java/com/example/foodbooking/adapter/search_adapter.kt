@@ -67,7 +67,7 @@ class SearchViewHolder( val view: View) : RecyclerView.ViewHolder(view) {
         }
         view.setOnClickListener {
             (it.context as AppCompatActivity).supportFragmentManager.beginTransaction()
-                .replace(R.id.flHome,  DeliveryFragment.create(search.deliveryId.toString())).addToBackStack(null).commit()
+                .replace(R.id.flHome,  DeliveryFragment.create(search.deliveryId.toString(),search.imageSearch,search.nameSearch)).addToBackStack(null).commit()
         }
     }
 }

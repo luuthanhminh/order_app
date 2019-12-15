@@ -3,18 +3,17 @@ package com.example.foodbooking.fragment
 
 import android.app.Activity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
+import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.foodbooking.AppConstants
+
 import com.example.foodbooking.R
 import com.example.foodbooking.SettingService
 import com.example.foodbooking.adapter.SearchAdapter
@@ -26,47 +25,47 @@ import com.example.foodbooking.data.promotionSearch
 import com.google.gson.GsonBuilder
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_delivery.*
+import kotlinx.android.synthetic.main.fragment_home_search.*
 import kotlinx.android.synthetic.main.fragment_search.*
 import retrofit2.HttpException
 
 /**
  * A simple [Fragment] subclass.
  */
-class SearchFragment : Fragment() {
+class HomeSearchFragment : Fragment() {
+    companion object {
+        fun create(keyword: String): HomeSearchFragment {
+            val fragment = HomeSearchFragment()
+            fragment.Keyword = keyword
+            return fragment
+        }
+    }
+
     private val apiService by lazy {
         ApiService.create()
     }
-
+    lateinit var Keyword: String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_search, container, false)
+        val view = inflater.inflate(R.layout.fragment_home_search, container, false)
         val token = SettingService.Get(AppConstants.TOKENKEY, context as Activity)
-        val search = view.findViewById<EditText>(R.id.edSearch)
-        val btSearch = view.findViewById<Button>(R.id.btSearch)
-        btSearch.setOnClickListener {
-            val keyword = search.text.toString()
-            if(keyword.isEmpty()){
-
-            }else{
-            apiService.getDataSearch(keyword, "Bearer $token")
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .doOnSubscribe { progressSearch.visibility = View.VISIBLE }
-                .doOnComplete { progressSearch.visibility = View.GONE }
-                .subscribe(this::handleCategoryResponse, this::handleError)}
+        val process= view.findViewById<ProgressBar>(R.id.progressSearchHome)
+        val close  = view.findViewById<ImageView>(R.id.imgClose)
+        apiService.getDataSearch(Keyword, "Bearer $token")
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { process.visibility = View.VISIBLE }
+            .doOnComplete { process.visibility = View.GONE }
+            .subscribe(this::handleSearchResponse, this::handleError)
+        close.setOnClickListener {
+            (it.context as AppCompatActivity).supportFragmentManager.popBackStack()
         }
-
-
         return view
     }
 
-
-    fun handleCategoryResponse(getDataSearch: GetDataSearch) {
-
+    fun handleSearchResponse(getDataSearch: GetDataSearch) {
         val search = ArrayList<Search_data>()
 
         for (itemPro in getDataSearch.data) {
@@ -88,11 +87,9 @@ class SearchFragment : Fragment() {
             )
 
         }
-        this.recyclerview_recent.layoutManager = LinearLayoutManager(this.activity)
-        this.recyclerview_recent.adapter = SearchAdapter(search, this.activity)
-
+        this.recyclerview_SearchHome.layoutManager = LinearLayoutManager(this.activity)
+        this.recyclerview_SearchHome.adapter = SearchAdapter(search, this.activity)
     }
-
 
     fun handleError(error: Throwable) {
         var message = "An error occurred"
@@ -109,5 +106,4 @@ class SearchFragment : Fragment() {
         Toast.makeText(this.activity, "Error ${message}", Toast.LENGTH_LONG).show()
 
     }
-
 }
