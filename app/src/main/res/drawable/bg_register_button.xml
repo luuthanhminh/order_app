@@ -2,4 +2,6 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true"  android:drawable="@color/registerPressed" />
     <item  android:drawable="@color/registerActive" />
+    <item android:state_pressed="true" android:drawable="@color/click"></item>
+    <item android:drawable="@color/click"></item>
 </selector>

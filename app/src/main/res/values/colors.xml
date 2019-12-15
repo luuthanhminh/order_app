@@ -5,4 +5,12 @@
     <color name="colorAccent">#D81B60</color>
     <color name="registerActive">#A80014</color>
     <color name="registerPressed">#80A80014</color>
+    <color name="click">#2196F3</color>
+
+
+    //doi mau switch
+    <color name="disable_forground_grey">#42221f1f</color>
+    <color name="disable_thumb_grey">#1c000000</color>
+    <color name="enable_thumb_green">#4CD964</color>
+    
 </resources>

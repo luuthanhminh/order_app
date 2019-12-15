@@ -157,7 +157,6 @@
                     android:layout_marginTop="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-
                 </Button>
                 <TextView
                     android:layout_marginTop="21dp"
@@ -169,15 +168,13 @@
                 </TextView>
 
                 <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="21.5dp"
                     android:background="@android:color/transparent"
                     android:text="@string/login"
-                    android:layout_marginBottom="21.5dp"
-                    android:layout_gravity="center"
-                    android:textColor="#A80014"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </Button>
-
+                    android:textColor="#A80014"></Button>
 
 
             </LinearLayout>

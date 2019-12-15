@@ -2,6 +2,7 @@ package com.example.foodbooking.fragment
 
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodbooking.AppConstants
+import com.example.foodbooking.MainActivity
 import com.example.foodbooking.R
 import com.example.foodbooking.SettingService
 import com.example.foodbooking.adapter.CategoriesAdapter
@@ -40,6 +42,8 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+
+       // SettingService.Save(AppConstants.TOKENKEY,"",this.activity as Activity)
         val token = SettingService.Get(AppConstants.TOKENKEY, this.activity as Activity)
 
         apiService.getDashBoard("Bearer $token")
@@ -112,6 +116,8 @@ class HomeFragment : Fragment() {
                 .show()
             SettingService.Save(AppConstants.TOKENKEY, "", this.activity as Activity)
             this.activity?.finish()
+           val  intent = Intent(this.context,MainActivity::class.java)
+            startActivity(intent)
         }
 //        else {
 //            Toast.makeText(this.activity, "Error ${message}", Toast.LENGTH_LONG).show()

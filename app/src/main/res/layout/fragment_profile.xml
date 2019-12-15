@@ -22,6 +22,7 @@
                 android:src="@drawable/icon_lich"
                 />
             <TextView
+                android:id="@+id/txtUserName"
                 android:textStyle="bold"
                 android:textColor="#4A4A4A"
                 android:layout_marginTop="10dp"
@@ -48,6 +49,7 @@
                     android:text="Payment Invoice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
+
                 </TextView>
                 <RelativeLayout
 
@@ -83,6 +85,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                     </ImageView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#000000"></LinearLayout>
 
                 </RelativeLayout>
 
@@ -128,7 +136,6 @@
             </LinearLayout>
             <LinearLayout
 
-
                 android:layout_marginTop="14dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -143,9 +150,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 </TextView>
+
                 <RelativeLayout
-
-
+                    android:id="@+id/rlAccount"
                     android:layout_width="match_parent"
                     android:layout_height="60dp">
                     <ImageView
@@ -183,7 +190,6 @@
                         android:layout_height="0.5dp"
                         android:layout_alignParentBottom="true"
                         android:background="#000000"></LinearLayout>
-
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -220,40 +226,51 @@
                         android:layout_height="wrap_content">
                     </ImageView>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#000000"></LinearLayout>
+
                 </RelativeLayout>
+
                 <RelativeLayout
 
                     android:layout_width="match_parent"
                     android:layout_height="60dp">
-                    <ImageView
-                        android:layout_marginLeft="37dp"
-                        android:layout_marginBottom="21dp"
-                        android:layout_marginTop="21dp"
-                        android:src="@drawable/icon_bell"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                    </ImageView>
 
-                    <TextView
-                        android:textStyle="bold"
-                        android:textSize="14dp"
-                        android:layout_centerVertical="true"
+                    <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="37dp"
+                        android:layout_marginTop="21dp"
+                        android:layout_marginBottom="21dp"
+                        android:src="@drawable/icon_bell"></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
                         android:layout_marginLeft="81dp"
-                        android:text="Notification">
+                        android:text="Notification"
+                        android:textSize="14dp"
+                        android:textStyle="bold">
 
                     </TextView>
 
-                    <ImageView
+                    <Switch
 
-                        android:layout_marginRight="38dp"
-                        android:layout_centerInParent="true"
-                        android:layout_alignParentRight="true"
-                        android:src="@drawable/icon_mright3"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                    </ImageView>
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="13dp"
+                        android:checked="false"
+                        android:theme="@style/SCBSwitch"></Switch>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#000000"></LinearLayout>
 
                 </RelativeLayout>
 
@@ -336,7 +353,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="81dp"
-                        android:text="Account Information">
+                        android:text="FAQ">
 
                     </TextView>
 
@@ -349,6 +366,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                     </ImageView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#000000"></LinearLayout>
 
                 </RelativeLayout>
 
@@ -372,7 +395,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="81dp"
-                        android:text="Address">
+                        android:text="Terms &amp; Conditions">
 
                     </TextView>
 
@@ -385,6 +408,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                     </ImageView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#000000"></LinearLayout>
 
                 </RelativeLayout>
                 <RelativeLayout
@@ -407,7 +436,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="81dp"
-                        android:text="Notification">
+                        android:text="Privacy Policy">
 
                     </TextView>
 
@@ -446,6 +475,7 @@
                     android:layout_height="wrap_content">
                 </TextView>
                 <RelativeLayout
+                    android:id="@+id/rlLogOut"
                     android:layout_width="match_parent"
                     android:layout_height="60dp">
                     <ImageView
@@ -469,15 +499,7 @@
 
                     </TextView>
 
-                    <ImageView
 
-                        android:layout_marginRight="38dp"
-                        android:layout_centerInParent="true"
-                        android:layout_alignParentRight="true"
-                        android:src="@drawable/icon_mright3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                    </ImageView>
 
                 </RelativeLayout>
 

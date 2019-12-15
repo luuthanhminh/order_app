@@ -5,9 +5,10 @@ class Promotions{
     lateinit var PrtionTime :String
     lateinit var PrtionIcon : String
 
-    constructor(prtionsName: String, prtionTime: String){
+    constructor(prtionsName: String, prtionTime: String, prtionicon:String){
         this.PrtionName = prtionsName
         this.PrtionTime = prtionTime
+        this.PrtionIcon = prtionicon
     }
 
 }

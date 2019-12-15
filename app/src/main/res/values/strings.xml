@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Food Booking</string>
 
+    <string name="changeimg"><u>Change Profile picture</u></string>
     <string name="login"><u>Login</u></string>
     <string name="mark"><u>Mark all as read</u></string>
     <string name="test">Knowing <span class="highlighted">the components</span> of cells
