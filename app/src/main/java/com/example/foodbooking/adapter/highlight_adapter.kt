@@ -29,18 +29,21 @@ class HighlightAdapter(val highlight:List<HighLight_food>, val context: Context?
 }
 class HighlightViewHolder( val view: View) : RecyclerView.ViewHolder(view) {
     val imgFood = view.findViewById<ImageView>(R.id.imgHighlight)
-    val tvNameFood = view.findViewById<TextView>(R.id.tvNameHighLightRestaurant)
+    val tvNameFood = view.findViewById<TextView>(R.id.tvNameHighLightFood)
     val tvPriceFood = view.findViewById<TextView>(R.id.tvPriceHighLightFood)
     val tvNameRes = view.findViewById<TextView>(R.id.tvNameHighLightRestaurant)
     val tvDetailRes = view.findViewById<TextView>(R.id.tvDetailHighLightRestaurant)
     val logoRes = view.findViewById<ImageView>(R.id.imgLogoHighLight)
+    val cusi = view.findViewById<TextView>(R.id.tvCuisicuiHighLightRestaurant)
 
     fun bindData(highlights : HighLight_food){
         tvNameFood.text = highlights.NameHighlightFood
-        tvPriceFood.text = highlights.PriceFood
+        tvPriceFood.text = highlights.PriceFood.text
         tvNameRes.text = highlights.NameHighlightRestaurant
         tvDetailRes.text= highlights.DetailHighlightRestaurant
         Picasso.get().load(highlights.ImageHighlightFood).into(imgFood)
         Picasso.get().load(highlights.LogoHighlightRestaurant).into(logoRes)
+        cusi.text = highlights.CuisicuiHighLightRestaurant
+
     }
 }

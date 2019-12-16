@@ -22,6 +22,7 @@ import com.example.foodbooking.apis.ApiService
 import com.example.foodbooking.apis.responseModels.GetCategories
 import com.example.foodbooking.apis.responseModels.GetDelivery
 import com.example.foodbooking.data.Delivery
+import com.example.foodbooking.data.pricedeli
 import com.google.gson.GsonBuilder
 import com.squareup.picasso.Picasso
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -74,7 +75,8 @@ class DeliveryFragment : Fragment() {
     fun handleDeliveryResponse(getDelivery: GetDelivery) {
         val deli = ArrayList<Delivery>()
         for (item in getDelivery.data) {
-            deli.add(Delivery(item.name, item.id, item.description, item.price.text, item.image))
+            val priceDeli = pricedeli(item.price.text,item.price.unit,item.price.value)
+            deli.add(Delivery(item.name, item.id, item.description, priceDeli, item.image))
         }
         this.recyclerview_delivery.layoutManager = LinearLayoutManager(this.activity)
         this.recyclerview_delivery.adapter = DeliveryAdapter(deli,this.activity)

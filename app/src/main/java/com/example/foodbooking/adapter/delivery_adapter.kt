@@ -33,7 +33,7 @@ class DeliveryViewHolder(val view:View):RecyclerView.ViewHolder(view){
     val detail = view.findViewById<TextView>(R.id.tvDeliveryDetail)
     fun bindData(deli:Delivery){
         named.text = deli.DeliveryName
-        price.text = deli.DeliveryPrice
+        price.text = deli.DeliveryPrice.text
         detail.text = deli.DeliveryDescription
         Picasso.get().load(deli.DeliveryImage).into(img)
     }

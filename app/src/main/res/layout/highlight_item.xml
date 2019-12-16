@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#ffffff"
     android:layout_width="335dp"
-    android:layout_height="150dp"
+    android:layout_height="160dp"
     android:layout_marginBottom="5dp"
     android:orientation="horizontal">
 
@@ -18,7 +18,7 @@
 
     <LinearLayout
         android:layout_width="180dp"
-        android:layout_height="140dp"
+        android:layout_height="157dp"
         android:orientation="vertical">
 
         <TextView
@@ -36,16 +36,29 @@
             android:id="@+id/tvPriceHighLightFood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="19dp"
             android:text="S$1800.00"
             android:textColor="#A80014"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
+        <TextView
+            android:id="@+id/tvDetailHighLightRestaurant"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:text="Barbecure &amp; bar"
+            android:textColor="#4a4a4a"
+            android:textSize="12dp"/>
+        <LinearLayout
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:background="#9C9797"
+            android:layout_width="150dp"
+            android:layout_height="1dp"
+            />
 
         <LinearLayout
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -68,20 +81,22 @@
                     android:layout_marginLeft="10dp"
                     android:text="The Girlls Sai Gon"
                     android:textColor="#000000"
-                    android:textSize="14dp">
+                    android:textSize="13dp">
 
                 </TextView>
-
                 <TextView
-                    android:id="@+id/tvDetailHighLightRestaurant"
+                    android:textStyle="italic"
+                    android:id="@+id/tvCuisicuiHighLightRestaurant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="Barbecure &amp; bar"
-                    android:textColor="#4a4a4a"
+                    android:text="The Girlls Sai Gon"
+                    android:textColor="#615F5F"
                     android:textSize="12dp">
 
                 </TextView>
+
+
             </LinearLayout>
         </LinearLayout>
 

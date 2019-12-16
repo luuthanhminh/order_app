@@ -9,26 +9,23 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.foodbooking.AppConstants
 import com.example.foodbooking.R
 import com.example.foodbooking.SettingService
-import com.example.foodbooking.adapter.Category_foodAdapter
 import com.example.foodbooking.adapter.ComboAdapter
+import com.example.foodbooking.adapter.HighlightAdapter
 import com.example.foodbooking.apis.ApiService
-import com.example.foodbooking.apis.responseModels.Discount
 import com.example.foodbooking.apis.responseModels.GetCategories
-import com.example.foodbooking.data.Category_foods_detail
 import com.example.foodbooking.data.Combo_food
+import com.example.foodbooking.data.HighLight_food
 import com.example.foodbooking.data.Promotion
+import com.example.foodbooking.data.priceHighliht
 import com.google.gson.GsonBuilder
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.fragment_category.*
 import retrofit2.HttpException
 
@@ -100,22 +97,22 @@ class CategoryFragment : Fragment() {
         this.recyclerview_promotion.layoutManager = LinearLayoutManager(this.activity)
         this.recyclerview_promotion.adapter = ComboAdapter(promotion, this.activity)
 
-        val foods = ArrayList<Category_foods_detail>()
+        val foods = ArrayList<HighLight_food>()
         for (itemCate in getCategories.data.foods) {
+            val pri = priceHighliht(itemCate.price.text,itemCate.price.unit,itemCate.price.value)
             foods.add(
-                Category_foods_detail(
+                HighLight_food(
                     itemCate.image,
                     itemCate.name,
-                    itemCate.price.text,
-                    itemCate.description,
-                    itemCate.restaurantImage,
+                    pri,itemCate.restaurantImage,
                     itemCate.restaurantName,
+                    itemCate.description,
                     itemCate.restaurantCuisines
                 )
             )
         }
         this.recyclerview_categories_food.layoutManager = LinearLayoutManager(this.activity)
-        this.recyclerview_categories_food.adapter = Category_foodAdapter(foods,this.activity)
+        this.recyclerview_categories_food.adapter = HighlightAdapter(foods,this.activity)
     }
 
 

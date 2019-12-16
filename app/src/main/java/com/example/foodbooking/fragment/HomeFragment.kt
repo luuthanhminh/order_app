@@ -78,14 +78,16 @@ class HomeFragment : Fragment() {
         //highlight
         val highlightFood = ArrayList<HighLight_food>()
         for (itemHL in getDasboard.data.foods) {
+            val item = priceHighliht(itemHL.price.text,itemHL.price.unit,itemHL.price.value)
             highlightFood.add(
                 HighLight_food(
                     itemHL.image,
                     itemHL.name,
-                    itemHL.price.text,
+                    item,
                     itemHL.restaurantImage,
                     itemHL.restaurantName,
-                    itemHL.description
+                    itemHL.description,
+                    itemHL.restaurantCuisines
                 )
             )
         }
