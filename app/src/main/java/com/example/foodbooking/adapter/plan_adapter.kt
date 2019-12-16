@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.foodbooking.R
 import com.example.foodbooking.data.Plan_food
+import com.example.foodbooking.fragment.DeliveryFragment
 import com.squareup.picasso.Picasso
 
 
@@ -25,9 +27,7 @@ class PlanAdapter(val food:List<Plan_food>, val context: Context?): RecyclerView
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val currentPlan_food =  food[position]
         (holder as PlanViewHolder).bindData(currentPlan_food)
-//        holder.itemView.setOnClickListener {
-//            Log.d("BBB",position.toString())
-//        }
+
     }
 
 
@@ -38,6 +38,7 @@ class PlanViewHolder( val view: View) : RecyclerView.ViewHolder(view){
     val tvDetailFood = view.findViewById<TextView>(R.id.tvDetailPlanFood)
     val tvCuisines = view.findViewById<TextView>(R.id.tvCuisinesPlan)
     val tvAddRess = view.findViewById<TextView>(R.id.tvAddressPlan)
+    val tvCode = view. findViewById<TextView>(R.id.tvDetailPlanFoodCode)
 
     fun bindData(foods : Plan_food){
         tvNameFood.text = foods.NamePlanFood
@@ -45,6 +46,11 @@ class PlanViewHolder( val view: View) : RecyclerView.ViewHolder(view){
         tvCuisines.text= foods.CuisicesPlan
         tvAddRess.text = foods.AddressPlan
         Picasso.get().load(foods.ImagePlanFood).into(imgPlanFood)
+        tvCode.text = "Code: ${foods.CodePlan}"
 
+        view.setOnClickListener {
+            (it.context as AppCompatActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.flHome,  DeliveryFragment.create(foods.DeliveryIdPlan.toString(),foods.ImagePlanFood,foods.NamePlanFood)).addToBackStack(null).commit()
+        }
     }
 }

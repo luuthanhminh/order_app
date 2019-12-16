@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item android:state_pressed="true"  android:drawable="@color/registerPressed" />
     <item  android:drawable="@color/registerActive" />
     <item android:state_pressed="true" android:drawable="@color/click"></item>
     <item android:drawable="@color/click"></item>
+
+    <item android:state_pressed="true" android:drawable="@color/registerPressed" />
+    <item android:drawable="@color/registerActive" />
+>>>>>>> 6039eafec3859c621e790bf0cb815f32e8e285c0
 </selector>

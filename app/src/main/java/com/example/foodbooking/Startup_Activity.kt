@@ -15,10 +15,12 @@ class Startup_Activity : AppCompatActivity() {
         if (!SettingService.Get(AppConstants.TOKENKEY,this).isNullOrEmpty()){
             val intent = Intent(this,HomeActivity::class.java)
             startActivity(intent)
+            finish()
         }
         else{
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
     }

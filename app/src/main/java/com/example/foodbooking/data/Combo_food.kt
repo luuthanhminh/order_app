@@ -1,20 +1,32 @@
 package com.example.foodbooking.data
 
-class Combo_food{
-    lateinit var ImageCbFood :String
-    lateinit var NameCbFood :String
-    lateinit var CostCbFood :String
-    lateinit var food1 :String
-    lateinit var LogocbRestaurant :String
-    lateinit var NamecbRestaurant :String
-    lateinit var DetailcbRestaurant :String
+class Combo_food {
+    lateinit var ImagePro: String
+    lateinit var NamePro: String
+    lateinit var CostPro: String
+    lateinit var Promotions: ArrayList<Promotion>
+    lateinit var AddressPro: String
+    lateinit var CusinesPro: String
+    lateinit var deliveryId:Number
 
-    constructor(nameCbFood :String, costCbFood :String,food1 :String,nameCbRes :String,detailCbRes :String){
-        this.NameCbFood = nameCbFood
-        this.CostCbFood = costCbFood
-        this.food1 = food1
-        this.NamecbRestaurant = nameCbRes
-        this.DetailcbRestaurant = detailCbRes
+    constructor(
+        imagePro: String,
+        namePro: String,
+        costPro: String,
+        promotions: ArrayList<Promotion>,
+        addressPro: String,
+        cusinesPro: String,
+        IdPro:Number
+    ) {
+        this.ImagePro = imagePro
+        this.NamePro = namePro
+        this.AddressPro = addressPro
+        this.CostPro = costPro
+        this.Promotions = promotions
+        this.CusinesPro = cusinesPro
+        this.deliveryId = IdPro
 
     }
 }
+
+class Promotion(val icon: String, val distcount: String)

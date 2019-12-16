@@ -31,6 +31,14 @@ interface ApiRequestInterface {
     @GET("notifications/promotions")
     fun getpromotion(@Header("Authorization") token: String): Observable<ResponseNotifications>
 
+    @GET("/api/home/categories/{categoryId}")
+    fun getCategories(@Path("categoryId") categoryId:String,  @Header("Authorization") token: String):Observable<GetCategories>
+
+    @GET(   "/api/home/search")
+    fun getDataSearch(@Query ("keyword")keyword:String,@Header("Authorization") token :String): Observable<GetDataSearch>
+
+    @GET("/api/home/menu/{deliveryId}")
+    fun getDeliveryId(@Path("deliveryId") deliveryId:String,@Header("Authorization") token :String): Observable<GetDelivery>
 
 }
 

@@ -7,7 +7,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodbooking.AppConstants
@@ -17,15 +20,16 @@ import com.example.foodbooking.SettingService
 import com.example.foodbooking.adapter.CategoriesAdapter
 import com.example.foodbooking.adapter.HighlightAdapter
 import com.example.foodbooking.adapter.PlanAdapter
+import com.example.foodbooking.adapter.SearchAdapter
 import com.example.foodbooking.apis.ApiService
 import com.example.foodbooking.apis.responseModels.GetDasboardResponse
-import com.example.foodbooking.data.Categories_food
-import com.example.foodbooking.data.HighLight_food
-import com.example.foodbooking.data.Plan_food
+import com.example.foodbooking.apis.responseModels.GetDataSearch
+import com.example.foodbooking.data.*
 import com.google.gson.GsonBuilder
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home_search.*
 import retrofit2.HttpException
 
 /**
@@ -45,13 +49,28 @@ class HomeFragment : Fragment() {
 
        // SettingService.Save(AppConstants.TOKENKEY,"",this.activity as Activity)
         val token = SettingService.Get(AppConstants.TOKENKEY, this.activity as Activity)
+        val edSearchHome = view.findViewById<EditText>(R.id.edSearchHome)
+        val btSearch = view.findViewById<Button>(R.id.btSearchHome)
+        btSearch.setOnClickListener {
+            val keyword = edSearchHome.text.toString()
+            if (keyword.isEmpty()) {
 
+            } else {
+
+                (this.activity as AppCompatActivity).supportFragmentManager.beginTransaction()
+                    .replace(
+                        R.id.flSearch,
+                        HomeSearchFragment.create(keyword)
+                    ).addToBackStack(null).commit()
+
+
+            }
+        }
         apiService.getDashBoard("Bearer $token")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnComplete { hideloading() }
             .subscribe(this::handleDashBoardResponse, this::handleError)
-
         return view
     }
 
@@ -81,7 +100,7 @@ class HomeFragment : Fragment() {
                     itemPlan.name,
                     itemPlan.promotionTitle,
                     itemPlan.cuisines,
-                    itemPlan.address
+                    itemPlan.address, itemPlan.code, itemPlan.deliveryId
                 )
             )
         }
