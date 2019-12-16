@@ -87,7 +87,8 @@ class HomeFragment : Fragment() {
                     itemHL.restaurantImage,
                     itemHL.restaurantName,
                     itemHL.description,
-                    itemHL.restaurantCuisines
+                    itemHL.restaurantCuisines,
+                    itemHL.id
                 )
             )
         }

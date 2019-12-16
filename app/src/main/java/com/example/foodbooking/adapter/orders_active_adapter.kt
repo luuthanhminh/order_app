@@ -34,8 +34,8 @@ class OdersAciveViewHolder(val view: View): RecyclerView.ViewHolder(view){
 
     fun bindData(ac : Oders_Active){
         nameActive.text = ac.NameOrderActive
-        coutActive.text = ac.CountOrderACtive
-        costActive.text = ac.CostOrderActive
+        coutActive.text = ac.CountOrderACtive.toString()
+        costActive.text = ac.PriceOrderActive.toString()
     }
 
 }

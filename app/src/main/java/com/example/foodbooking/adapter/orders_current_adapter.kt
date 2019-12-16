@@ -36,7 +36,7 @@ class  OdersCurrentViewHolder( val view: View) : RecyclerView.ViewHolder(view) {
     val btSub = view.findViewById<Button>(R.id.btnOdersCurrentSub)
     fun bindData(cr : Oders_Current_Cart){
         tvCurrentName.text = cr.NameCurrenCart
-        tvCurrentCost.text = cr.CostCurrenCart
+        tvCurrentCost.text = cr.PriCurrenCart.toString()
 
         btAdd.setOnClickListener {
             cr.CountCurrenCart += 1

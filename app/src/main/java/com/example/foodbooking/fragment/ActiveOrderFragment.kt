@@ -27,13 +27,11 @@ class ActiveOrderFragment : Fragment() {
         val rvActive = view.findViewById<RecyclerView>(R.id.recyclerview_ActiveOrder)
         val Active = ArrayList<Oders_Active>()
 //
-        Active.add(Oders_Active("The Ultimate Moose Burger","2 x \$100","\$200"))
-        Active.add(Oders_Active("The Ultimate Moose Burger","2 x \$100","\$200"))
-        Active.add(Oders_Active("The Ultimate Moose Burger","2 x \$100","\$200"))
-        Active.add(Oders_Active("The Ultimate Moose Burger","2 x \$100","\$200"))
-        Active.add(Oders_Active("The Ultimate Moose Burger","2 x \$100","\$200"))
-        Active.add(Oders_Active("The Ultimate Moose Burger","2 x \$100","\$200"))
-        Active.add(Oders_Active("The Ultimate Moose Burger","2 x \$100","\$200"))
+        Active.add(Oders_Active("The Ultimate Moose Burger",100,100))
+        Active.add(Oders_Active("The Ultimate Moose Burger",100,100))
+        Active.add(Oders_Active("The Ultimate Moose Burger",100,100))
+        Active.add(Oders_Active("The Ultimate Moose Burger",100,100))
+        Active.add(Oders_Active("The Ultimate Moose Burger",100,100))
         rvActive.layoutManager = LinearLayoutManager(this.activity)
         rvActive.adapter = OdersActiveAdapter(Active,this.activity)
 

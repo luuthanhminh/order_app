@@ -1,14 +1,18 @@
 package com.example.foodbooking.data
+class ItemOders(val item : ArrayList<Oders_Current_Cart>)
+class Oders_Current_Cart {
+     var ImageCurrenCart: String
+     var NameCurrenCart: String
+    var PriCurrenCart: Int = 0
+    var CountCurrenCart: Int = 0
+    var IdCurrenCart : Number =0
+    var Total = PriCurrenCart * CountCurrenCart
 
-class Oders_Current_Cart{
-    lateinit var ImageCurrenCart :String
-    lateinit var NameCurrenCart :String
-    lateinit var CostCurrenCart :String
-    var CountCurrenCart :Int = 0
-
-    constructor(nameCurrenCart:String,costCurrenCart:String){
+    constructor(img:String,nameCurrenCart: String, priCurrenCart: Int,count :Int,id:Number) {
         this.NameCurrenCart = nameCurrenCart
-        this.CostCurrenCart = costCurrenCart
-
+        this.PriCurrenCart = priCurrenCart
+        this.ImageCurrenCart = img
+        this.CountCurrenCart = count
+        this.IdCurrenCart = id
     }
 }

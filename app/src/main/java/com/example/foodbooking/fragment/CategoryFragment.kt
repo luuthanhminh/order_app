@@ -107,7 +107,8 @@ class CategoryFragment : Fragment() {
                     pri,itemCate.restaurantImage,
                     itemCate.restaurantName,
                     itemCate.description,
-                    itemCate.restaurantCuisines
+                    itemCate.restaurantCuisines,
+                    itemCate.id
                 )
             )
         }
