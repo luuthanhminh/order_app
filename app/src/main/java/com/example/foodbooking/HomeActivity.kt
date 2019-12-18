@@ -1,5 +1,6 @@
 package com.example.foodbooking
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
@@ -10,12 +11,18 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.foodbooking.apis.ApiService
+import com.example.foodbooking.data.Oders_Current_Cart
 import com.example.foodbooking.fragment.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
-
+//    fun listOder(list:ArrayList<Oders_Current_Cart>){
+//        this.list= list
+//        CurrentCartFragment.create(list)
+//
+//    }
+    val list = ArrayList<Oders_Current_Cart>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -71,14 +78,15 @@ class HomeActivity : AppCompatActivity() {
 
         })
 
-
-
     }
+
+
 }
 
 class CollectionAdapter(fragmentActivity: FragmentActivity) :
     FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount(): Int = 6
+
 
     override fun createFragment(position: Int): Fragment {
         if (position == 0) {
@@ -90,6 +98,7 @@ class CollectionAdapter(fragmentActivity: FragmentActivity) :
         } else if (position == 3) {
             return NotificationFragment()
         } else  return ProfileFragment()
+
     }
 
 

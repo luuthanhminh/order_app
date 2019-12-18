@@ -1,6 +1,7 @@
 package com.example.foodbooking.adapter
 
 import android.content.Context
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,9 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.RecyclerView
+import com.example.foodbooking.HomeActivity
 import com.example.foodbooking.R
 import com.example.foodbooking.data.HighLight_food
 import com.example.foodbooking.data.ItemOders
@@ -19,9 +22,12 @@ import com.squareup.picasso.Picasso
 
 class HighlightAdapter(val highlight: List<HighLight_food>, val context: Context?) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    val oderItem = ArrayList<Oders_Current_Cart>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.highlight_item, parent, false)
-        return HighlightViewHolder(view)
+
+        return HighlightViewHolder(view,oderItem)
     }
 
     override fun getItemCount(): Int {
@@ -34,7 +40,7 @@ class HighlightAdapter(val highlight: List<HighLight_food>, val context: Context
     }
 }
 
-class HighlightViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
+class HighlightViewHolder(val view: View, val odersItem:ArrayList<Oders_Current_Cart>) : RecyclerView.ViewHolder(view) {
     val btnAdd = view.findViewById<Button>(R.id.btAdddHighLight)
     val imgFood = view.findViewById<ImageView>(R.id.imgHighlight)
     val tvNameFood = view.findViewById<TextView>(R.id.tvNameHighLightFood)
@@ -43,7 +49,7 @@ class HighlightViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
     val tvDetailRes = view.findViewById<TextView>(R.id.tvDetailHighLightRestaurant)
     val logoRes = view.findViewById<ImageView>(R.id.imgLogoHighLight)
     val cusi = view.findViewById<TextView>(R.id.tvCuisicuiHighLightRestaurant)
-    val orderItem = arrayListOf<Oders_Current_Cart>()
+
 
 
 
@@ -60,18 +66,26 @@ class HighlightViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 //                highlights.NameHighlightFood,
 //                highlights.PriceFood.value,
 //                1,highlights.IdHighlightFood)
-            orderItem.add(
-                Oders_Current_Cart(
-                    highlights.ImageHighlightFood,
-                    highlights.NameHighlightFood,
-                    highlights.PriceFood.value,
-                    1, highlights.IdHighlightFood
-                )
-            )
-            val list =ItemOders(orderItem)
-//            CurrentCartFragment.create(orderItem)
-            Log.d("BBB",orderItem.size.toString())
-            Log.d("BBB","list :"+list.item.size.toString())
+            (it.context as HomeActivity).list.add( Oders_Current_Cart(
+                highlights.ImageHighlightFood,
+                highlights.NameHighlightFood,
+                highlights.PriceFood.value,
+                1, highlights.IdHighlightFood
+            ))
+//            odersItem.add(
+//                Oders_Current_Cart(
+//                    highlights.ImageHighlightFood,
+//                    highlights.NameHighlightFood,
+//                    highlights.PriceFood.value,
+//                    1, highlights.IdHighlightFood
+//                )
+//            )
+            Log.d("BBB",odersItem.size.toString())
+
+
+            //CurrentCartFragment.create(orderItem).arguments(this,list)
+
+
 
         }
 

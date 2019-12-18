@@ -68,7 +68,6 @@
                 android:textColor="#d0031b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="S$10.00"
                 />
             <EditText
                 android:layout_marginTop="15dp"
@@ -84,9 +83,7 @@
                 android:textColor="#d0031b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="- S$50.000"
                 />
         </LinearLayout>
     </LinearLayout>
-
 </LinearLayout>
